@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/ubuntu/projects/unp/.vscode",
+  "command": "/usr/bin/cc  -I/home/ubuntu/projects/unp/include -g -std=gnu11 -o CMakeFiles/client.dir/src/1-tcp/client.c.o -c /home/ubuntu/projects/unp/src/1-tcp/client.c",
+  "file": "/home/ubuntu/projects/unp/src/1-tcp/client.c"
+},
+{
+  "directory": "/home/ubuntu/projects/unp/.vscode",
+  "command": "/usr/bin/cc  -I/home/ubuntu/projects/unp/include -g -std=gnu11 -o CMakeFiles/server.dir/src/1-tcp/server.c.o -c /home/ubuntu/projects/unp/src/1-tcp/server.c",
+  "file": "/home/ubuntu/projects/unp/src/1-tcp/server.c"
+}
+]

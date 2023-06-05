@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/client.dir/src/1-tcp/client.c.o -o bin/1-TCP/client 

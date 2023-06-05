@@ -1,0 +1,4 @@
+/home/ubuntu/projects/unp/.vscode/CMakeFiles/client.dir
+/home/ubuntu/projects/unp/.vscode/CMakeFiles/server.dir
+/home/ubuntu/projects/unp/.vscode/CMakeFiles/edit_cache.dir
+/home/ubuntu/projects/unp/.vscode/CMakeFiles/rebuild_cache.dir

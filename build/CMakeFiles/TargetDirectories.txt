@@ -1,0 +1,4 @@
+/home/ubuntu/projects/unp/build/CMakeFiles/client.dir
+/home/ubuntu/projects/unp/build/CMakeFiles/server.dir
+/home/ubuntu/projects/unp/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/projects/unp/build/CMakeFiles/rebuild_cache.dir
