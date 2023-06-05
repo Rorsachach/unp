@@ -5,7 +5,7 @@
       "filetypes": [ "cpp", "c", "objc", "rust" ],
       "configuration": {
         "request": "launch",
-        "program": "${workspaceFolder}/test",
+        "program": "${workspaceFolder}/build/bin/1-TCP/server",
         "cwd": "${workspaceFolder}",
         "args": [],
         "environment": [],
