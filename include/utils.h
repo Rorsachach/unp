@@ -1,6 +1,10 @@
+#pragma once
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
+
+#define BUFFER_MAX 4096
 
 ssize_t readn(int fd, void* vptr, size_t n) {
   ssize_t nread;

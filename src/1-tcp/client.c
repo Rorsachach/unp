@@ -26,9 +26,11 @@ int main(int argc, char** argv) {
   bzero(&addr, sizeof (addr));
   addr.sin_family = AF_INET;
   addr.sin_port = htons(55555);
-  inet_pton(AF_INET6, argv[1], &addr.sin_addr);
+  inet_pton(AF_INET, argv[1], &addr.sin_addr);
 
   connect(sockfd, (struct sockaddr*) &addr, sizeof(addr));
+  
+  printf("connect\n");
 
   /* 数据通信 */
   str_cli(stdin, sockfd);
@@ -37,14 +39,16 @@ int main(int argc, char** argv) {
 }
 
 void str_cli(FILE* file, int sockfd) {
-  char sendline[1024], recvline[1024];
-  while (fgets(sendline, 1024, file) != NULL) {
+  char sendline[BUFFER_MAX], recvline[BUFFER_MAX];
+
+  while (fgets(sendline, BUFFER_MAX, file) != NULL) {
     writen(sockfd, sendline, strlen(sendline));
 
-    if ((readline(sockfd, recvline, 1024)) == 0) {
-      perror("server terminated prematuraly.");
+    if (readline(sockfd, recvline, BUFFER_MAX) == 0) {
+      perror("server teminated prematuraly");
+      exit(1);
     }
-
-    fputs(recvline, stdout);  
+    fputs(recvline, stdout);
   }
 }
+

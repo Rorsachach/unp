@@ -33,6 +33,7 @@ int main(int argc, char** argv) {
   for (;;) {
     client_length = sizeof(clientAddr);
     clientSockFd = accept(serverSockFd, (struct sockaddr*) &clientAddr, &client_length);
+    // cpid = fork();
     if ((cpid = fork()) == 0) {
       close(serverSockFd);
       /* 数据通信 */
@@ -45,18 +46,15 @@ int main(int argc, char** argv) {
   exit(0);
 }
 
-
 void str_echo(int sockfd) {
   ssize_t n;
-  char buf[1024];
+  char buf[BUFFER_MAX];
 
 again:
-  while ((n = readn(sockfd, buf, 1024)) > 0) {
-    writen(sockfd, buf, n);
-  }
+  while ((n = read(sockfd, buf, BUFFER_MAX)) > 0)
+    write(sockfd, buf, n);
 
-  if (n < 0 && errno == EINTR)
-    goto again;
-  else if (n < 0)
-    perror("[Error]: read error.");
+  if (n < 0 && errno == EINTR) goto again;
+  else if (n < 0) perror("[Error]: read error.");
 }
+
