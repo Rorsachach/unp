@@ -1,3 +1,5 @@
+#include <signal.h>
+#include <sys/wait.h>
 #include <errno.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -9,6 +11,7 @@
 #include "../../include/utils.h"
 
 void str_echo(int);
+void wait_child(int);
 
 int main(int argc, char** argv) {
   int serverSockFd, clientSockFd;
@@ -27,8 +30,9 @@ int main(int argc, char** argv) {
   serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
   bind(serverSockFd, (struct sockaddr*) &serverAddr, sizeof(serverAddr));
-
   listen(serverSockFd, 5);
+
+  signal(SIGCHLD, wait_child); 
 
   for (;;) {
     client_length = sizeof(clientAddr);
@@ -58,3 +62,12 @@ again:
   else if (n < 0) perror("[Error]: read error.");
 }
 
+void wait_child(int signo) {
+  pid_t pid;
+  int stat;
+
+  while ((pid = waitpid(-1, &stat, WNOHANG)) > 0) {
+    printf("[info]: child %d terminated.\n", pid);
+  }
+  return;
+}

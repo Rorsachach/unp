@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/server.dir/src/1-tcp/server.c.o -o bin/1-TCP/server 
+/usr/bin/cc CMakeFiles/server.dir/src/1-tcp/server.c.o -o server 

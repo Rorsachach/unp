@@ -117,78 +117,78 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named client
+# Target rules for targets named client2
 
 # Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
-.PHONY : client
+client2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client2
+.PHONY : client2
 
 # fast build rule for target.
-client/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-.PHONY : client/fast
+client2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/build
+.PHONY : client2/fast
 
 #=============================================================================
-# Target rules for targets named server
+# Target rules for targets named server2
 
 # Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
-.PHONY : server
+server2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server2
+.PHONY : server2
 
 # fast build rule for target.
-server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-.PHONY : server/fast
+server2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server2.dir/build.make CMakeFiles/server2.dir/build
+.PHONY : server2/fast
 
-src/1-tcp/client.o: src/1-tcp/client.c.o
-.PHONY : src/1-tcp/client.o
-
-# target to build an object file
-src/1-tcp/client.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/1-tcp/client.c.o
-.PHONY : src/1-tcp/client.c.o
-
-src/1-tcp/client.i: src/1-tcp/client.c.i
-.PHONY : src/1-tcp/client.i
-
-# target to preprocess a source file
-src/1-tcp/client.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/1-tcp/client.c.i
-.PHONY : src/1-tcp/client.c.i
-
-src/1-tcp/client.s: src/1-tcp/client.c.s
-.PHONY : src/1-tcp/client.s
-
-# target to generate assembly for a file
-src/1-tcp/client.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/1-tcp/client.c.s
-.PHONY : src/1-tcp/client.c.s
-
-src/1-tcp/server.o: src/1-tcp/server.c.o
-.PHONY : src/1-tcp/server.o
+src/2-select/client.o: src/2-select/client.c.o
+.PHONY : src/2-select/client.o
 
 # target to build an object file
-src/1-tcp/server.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/1-tcp/server.c.o
-.PHONY : src/1-tcp/server.c.o
+src/2-select/client.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/src/2-select/client.c.o
+.PHONY : src/2-select/client.c.o
 
-src/1-tcp/server.i: src/1-tcp/server.c.i
-.PHONY : src/1-tcp/server.i
+src/2-select/client.i: src/2-select/client.c.i
+.PHONY : src/2-select/client.i
 
 # target to preprocess a source file
-src/1-tcp/server.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/1-tcp/server.c.i
-.PHONY : src/1-tcp/server.c.i
+src/2-select/client.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/src/2-select/client.c.i
+.PHONY : src/2-select/client.c.i
 
-src/1-tcp/server.s: src/1-tcp/server.c.s
-.PHONY : src/1-tcp/server.s
+src/2-select/client.s: src/2-select/client.c.s
+.PHONY : src/2-select/client.s
 
 # target to generate assembly for a file
-src/1-tcp/server.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/1-tcp/server.c.s
-.PHONY : src/1-tcp/server.c.s
+src/2-select/client.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client2.dir/build.make CMakeFiles/client2.dir/src/2-select/client.c.s
+.PHONY : src/2-select/client.c.s
+
+src/2-select/server.o: src/2-select/server.c.o
+.PHONY : src/2-select/server.o
+
+# target to build an object file
+src/2-select/server.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server2.dir/build.make CMakeFiles/server2.dir/src/2-select/server.c.o
+.PHONY : src/2-select/server.c.o
+
+src/2-select/server.i: src/2-select/server.c.i
+.PHONY : src/2-select/server.i
+
+# target to preprocess a source file
+src/2-select/server.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server2.dir/build.make CMakeFiles/server2.dir/src/2-select/server.c.i
+.PHONY : src/2-select/server.c.i
+
+src/2-select/server.s: src/2-select/server.c.s
+.PHONY : src/2-select/server.s
+
+# target to generate assembly for a file
+src/2-select/server.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server2.dir/build.make CMakeFiles/server2.dir/src/2-select/server.c.s
+.PHONY : src/2-select/server.c.s
 
 # Help Target
 help:
@@ -198,14 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... client"
-	@echo "... server"
-	@echo "... src/1-tcp/client.o"
-	@echo "... src/1-tcp/client.i"
-	@echo "... src/1-tcp/client.s"
-	@echo "... src/1-tcp/server.o"
-	@echo "... src/1-tcp/server.i"
-	@echo "... src/1-tcp/server.s"
+	@echo "... client2"
+	@echo "... server2"
+	@echo "... src/2-select/client.o"
+	@echo "... src/2-select/client.i"
+	@echo "... src/2-select/client.s"
+	@echo "... src/2-select/server.o"
+	@echo "... src/2-select/server.i"
+	@echo "... src/2-select/server.s"
 .PHONY : help
 
 

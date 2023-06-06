@@ -5,12 +5,19 @@
       "filetypes": [ "cpp", "c", "objc", "rust" ],
       "configuration": {
         "request": "launch",
-        "program": "${workspaceFolder}/build/bin/1-TCP/server",
+        "program": "${workspaceFolder}/build/bin/1-TCP/client",
         "cwd": "${workspaceFolder}",
-        "args": [],
+        "args": ["127.0.0.1"],
         "environment": [],
         "externalConsole": true,
+        "stopAtEntry": true,
         "MIMode": "gdb",
+        "breakpointers": {
+          "exception": {
+            "cpp_throw": "Y",
+            "cpp_catch": "N"
+          }
+        },
         "setupCommands": [
           {
             "description": "Enable pretty-printing for gdb",
